@@ -1,29 +1,27 @@
 package com.example.viikko10;
 
-
-
 public class CarData {
-    private String type;   // Ajoneuvoluokan nimi
-    private int count;     // Lukumäärä
+    private String type;
+    private int amount;
 
-    public CarData(String type, int count) {
+    public CarData(String type, int amount) {
         this.type = type;
-        this.count = count;
+        this.amount = amount;
     }
 
     public String getType() {
         return type;
     }
 
-    public int getCount() {
-        return count;
+    public int getAmount() {
+        return amount;
     }
 
     @Override
     public String toString() {
-        // Palautetaan merkkijono muodossa "Tyyppi: lukumäärä"
-        return type + ": " + count;
+        return type + ": " + amount;
     }
 }
+
 
 

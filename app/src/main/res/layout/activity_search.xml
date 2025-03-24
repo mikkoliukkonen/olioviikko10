@@ -5,51 +5,35 @@
     android:padding="16dp">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Kaupunki:"
-            android:textSize="16sp"
-            android:layout_marginTop="8dp"/>
         <EditText
-            android:id="@+id/editTextCity"
+            android:id="@+id/CityNameEdit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Kaupungin nimi"/>
+            android:hint="Kaupunki" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Vuosi:"
-            android:textSize="16sp"
-            android:layout_marginTop="16dp"/>
         <EditText
-            android:id="@+id/editTextYear"
+            android:id="@+id/YearEdit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="YYYY"
-            android:inputType="number"/>
+            android:hint="Vuosi"
+            android:inputType="number" />
 
         <Button
-            android:id="@+id/buttonFetch"
+            android:id="@+id/SearchButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Hae tiedot"
-            android:textAllCaps="false"
-            android:background="@drawable/btn_rounded_green"
-            android:textSize="16sp"
-            android:layout_marginTop="24dp"/>
+            android:layout_marginTop="16dp" />
 
         <TextView
-            android:id="@+id/textViewMessage"
+            android:id="@+id/StatusText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#000000"
-            android:textSize="14sp"
-            android:layout_marginTop="16dp"/>
+            android:text=""
+            android:layout_marginTop="16dp" />
     </LinearLayout>
 </ScrollView>

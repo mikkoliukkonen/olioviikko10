@@ -1,51 +1,41 @@
 package com.example.viikko10;
 
-
-
 import android.os.Bundle;
-import android.widget.ListView;
 import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.List;
-import android.widget.ArrayAdapter;
 
 public class ListInfoActivity extends AppCompatActivity {
 
-    private TextView textHeader;
-    private ListView listView;
-    private TextView textTotal;
+    private TextView CityText, YearText, CarInfoText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_info);
 
-        textHeader = findViewById(R.id.textViewHeader);
-        listView = findViewById(R.id.listViewData);
-        textTotal = findViewById(R.id.textViewTotal);
+        CityText = findViewById(R.id.CityText);
+        YearText = findViewById(R.id.YearText);
+        CarInfoText = findViewById(R.id.CarInfoText);
 
-        // Noudetaan tallennetut tiedot
         String city = CarDataStorage.getCity();
         int year = CarDataStorage.getYear();
-        List<CarData> dataList = CarDataStorage.getDataList();
+        List<CarData> cars = CarDataStorage.getCarData();
 
-        if (city == null || dataList == null || dataList.isEmpty()) {
-            // Ei tietoja - näytetään tyhjälle listalle ilmoitus
-            textHeader.setText("Ei näytettäviä tietoja");
-            textTotal.setText("");
-        } else {
-            // Asetetaan otsikko "Kaupunki – Vuosi"
-            textHeader.setText(city + " – " + year);
-            // Asetetaan CarData-lista listView:hen
-            ArrayAdapter<CarData> adapter = new ArrayAdapter<>(this,
-                    android.R.layout.simple_list_item_1, dataList);
-            listView.setAdapter(adapter);
-            // Lasketaan kokonaismäärä (summa)
-            int totalCount = 0;
-            for (CarData cd : dataList) {
-                totalCount += cd.getCount();
-            }
-            textTotal.setText("Yhteensä: " + totalCount);
+        CityText.setText(city != null ? city : "Ei tietoa");
+        YearText.setText(String.valueOf(year));
+
+        StringBuilder builder = new StringBuilder();
+        int total = 0;
+        for (CarData car : cars) {
+            builder.append(car.getType()).append(": ").append(car.getAmount()).append("\n");
+            total += car.getAmount();
         }
+
+        builder.append("Yhteensä: ").append(total);
+        CarInfoText.setText(builder.toString());
     }
 }
+

@@ -1,32 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:padding="16dp">
 
     <TextView
-        android:id="@+id/textViewHeader"
+        android:id="@+id/CityText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Kaupunki – Vuosi"
-        android:textStyle="bold"
-        android:textSize="18sp"
-        android:layout_marginBottom="8dp"/>
-
-    <ListView
-        android:id="@+id/listViewData"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:dividerHeight="4dp"/>
+        android:text="Kaupunki"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/textViewTotal"
+        android:id="@+id/YearText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Yhteensä: "
-        android:textStyle="bold"
-        android:textSize="16sp"
-        android:layout_marginTop="8dp"/>
+        android:text="Vuosi"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/CarInfoText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ajoneuvotiedot"
+        android:layout_marginTop="12dp"
+        android:textSize="16sp" />
 </LinearLayout>
+
